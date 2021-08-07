@@ -1,4 +1,3 @@
-const e = require("express");
 const config = require("./config");
 const jointocreatemap = new Map();
 module.exports = function (client) {
