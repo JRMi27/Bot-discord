@@ -1,14 +1,14 @@
 {
-    "name": "molka",
-    "version": "1.0.0",
-    "description": "",
-    "main":  "index.js",
-    "author": "Ayriss",
-    "license": "ICS",
-    "dependencies": {
-        "discord.js": "^13.0.1"
-    },
-    "scripts": {
-        "start": "node index.js"
-    }
+  "name": "molka",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Ayriss",
+  "license": "ISC",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "discord.js": "^13.0.1"
+  }
 }
