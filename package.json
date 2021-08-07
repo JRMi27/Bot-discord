@@ -5,10 +5,10 @@
   "main": "index.js",
   "author": "Ayriss",
   "license": "ISC",
-  "scripts": {
-    "start": "node server.js"
-  },
   "dependencies": {
     "discord.js": "^13.0.1"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
