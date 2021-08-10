@@ -109,7 +109,7 @@ module.exports = function (client) {
       //log it 
       console.log(" :: " + user.member.user.username + "#" + user.member.user.discriminator + " :: Channel crée")
       //user.member.user.send("This can be used to message the member that a new room was created")
-      await user.guild.channels.create(`🆘 Attente aide`, {
+      await user.guild.channels.create(`${user.member.user.username}`, {
         type: 'voice',
         parent: user.channel.parent.id, //or set it as a category id
       }).then(async vc => {
