@@ -9,6 +9,7 @@ const Discord = require('discord.js'),
 client.login(config.token)
 client.commands = new Discord.Collection()
 client.db = require('./db.json')
+client.warning = require ('./warning.json')
 
 fs.readdir('./commands', (err, files) => {
     if (err) throw err
