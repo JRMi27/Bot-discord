@@ -11,13 +11,14 @@ module.exports = {
         if (message.member.roles.highest.comparePositionTo(member.roles.highest) < 1 && message.author.id !== message.guild.ownerID) return message.channel.send('Vous ne pouvez pas warn ce membre.')
         const reason = args.slice(1).join(' ')
         if (!reason) return message.channel.send('Veuillez indiquer une raison.')
-        if (!client.db.warns[member.id]) client.db.warns[member.id] = []
-        client.db.warns[member.id].unshift({
+        if (!client.warning.warns[member.id]) client.warning.warns[member.id] = []
+        client.warning.warns[member.id].unshift({
             reason,
             date: Date.now(),
             mod: message.author.id
         })
         message.channel.send(`${member} a été warn pour ${reason} !`)
+        fs.writeFileSync('./warning.json', JSON.stringify(client.warning))
         message.guild.channels.cache.get(config.logs).send(new Discord.MessageEmbed()
             .setAuthor(`[WARN] ${member.user.tag}`, member.user.displayAvatarURL())
             .addField('Utilisateur', member, true)
