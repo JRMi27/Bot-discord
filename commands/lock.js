@@ -1,6 +1,4 @@
-const fs = require('fs'),
-    Discord = require('discord.js'),
-    config = require('../config.json')
+const fs = require('fs')
  
 module.exports = {
     run: (message, args, client) => {
@@ -10,10 +8,6 @@ module.exports = {
         client.db.lockedChannels.push(channel.id)
         fs.writeFileSync('./db.json', JSON.stringify(client.db))
         message.channel.send('Ce salon a été verrouillé !')
-        message.guild.channels.cache.get(config.logs).send(new Discord.MessageEmbed()
-            .setAuthor(`[LOCK] ${channel.name}`)
-            .addField('Salon', channel, true)
-            .addField('Modérateur', message.author, true))
     },
     name: 'lock',
     guildOnly: true
